@@ -272,11 +272,18 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Invalid password - empty")]
         [NUnit.Framework.CategoryAttribute("sad")]
-        public virtual void InvalidPassword_Empty()
+        [NUnit.Framework.TestCaseAttribute("", null)]
+        public virtual void InvalidPassword_Empty(string password, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "sad"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("password", password);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid password - empty", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 43
 this.ScenarioInitialize(scenarioInfo);
@@ -305,7 +312,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I have entered the email \"testing@snailmail.ccm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 46
- testRunner.And("I have entered the password <>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have entered the password {0}", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 47
  testRunner.When("I click the sign in button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
