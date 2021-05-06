@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AutomationPracticeTestFramework.Selenium_AP_SigninTests">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAEAAAAAgAACAAABABAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>tests\Selenium_AP_SigninTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomationPracticeTestFramework.AP_Website">
+    <Position X="3.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAgAAgAAAAAEAAAI=</HashCode>
+      <FileName>lib\pages\AP_Website.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AP_HomePage" />
+      <Property Name="AP_SigninPage" />
+      <Property Name="SeleniumDriver" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomationPracticeTestFramework.AP_SigningPage">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAQAAAAAgAgAAAAAgAACEAAAAIiAMAEAQAAADAAA=</HashCode>
+      <FileName>lib\pages\AP_SigningPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomationPracticeTestFramework.AP_HomePage">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAwAAAAAAAAAAAAAAAAAgAQAAAAAAAAAAA=</HashCode>
+      <FileName>lib\pages\AP_HomePage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomationPracticeTestFramework.SeleniumDriverConfig">
+    <Position X="9.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQIAAEAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>lib\driver_config\SeleniumDriverConfig.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Driver" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="OpenQA.Selenium.IWebDriver">
+    <Position X="6" Y="0.5" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
