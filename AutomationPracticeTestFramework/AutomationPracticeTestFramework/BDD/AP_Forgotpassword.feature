@@ -15,11 +15,13 @@ Scenario: Valid email
 	Then I Got A Message "A confirmation email has been sent to your address: testing@snailmail.com"
 
 @sad
+Scenario: Invalid email
 	Given I Am On The Forgot Password Page
 	When I Click The Retrieve Password Btc With An Email "wrong"
-	Then I Got A Message "There is 1 error\r\nInvalid email address."
+	Then I Got A Message "Invalid email address."
 
 @sad
+Scenario: Not existing email
 	Given I Am On The Forgot Password Page
 	When I Click The Retrieve Password Btc With An Email "wrong@qwe.zx"
-	Then I Got A  Message "There is 1 error\r\nThere is no account registered for this email address."
+	Then I Got A Message "There is no account registered for this email address."
