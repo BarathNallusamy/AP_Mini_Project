@@ -8,6 +8,7 @@ namespace AutomationPracticeTestFramework
         public AP_HomePage AP_HomePage { get; internal set; }
         public AP_SigningPage AP_SigninPage { get; internal set; }
         public AP_ForgotPassword AP_ForgotPassword { get; internal set; }
+        public AP_TshirtPage AP_TshirtPage { get; internal set; }
         public AP_Website(string driver, int pageLoadSecs = 20, int waitSecs = 20)
         {
             //construct and configure the driver
@@ -16,6 +17,7 @@ namespace AutomationPracticeTestFramework
             AP_HomePage = new AP_HomePage(SeleniumDriver);
             AP_SigninPage = new AP_SigningPage(SeleniumDriver);
             AP_ForgotPassword = new AP_ForgotPassword(SeleniumDriver);
+            AP_TshirtPage = new AP_TshirtPage(SeleniumDriver);
         }
         public void DeleteCookies()
         {
