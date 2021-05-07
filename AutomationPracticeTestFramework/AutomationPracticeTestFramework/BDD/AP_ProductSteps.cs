@@ -43,6 +43,7 @@ namespace AutomationPracticeTestFramework
             GivenIAmOnTheHomepage();
             GivenIClickTheT_ShirtsTab();
             WhenIAddAT_ShirtToTheCart();
+            Thread.Sleep(3000);
         }
 
         [Given(@"I click the proceed to checkout button")]
@@ -84,7 +85,6 @@ namespace AutomationPracticeTestFramework
             Assert.That(_website.AP_Product.GetDeliveryNotice(), Does.Contain(delivery));
         }
 
-
         [Given(@"I click the proceed to shipping")]
         public void GivenIClickTheProceedToShipping(string email, string pWord)
         {
@@ -93,14 +93,24 @@ namespace AutomationPracticeTestFramework
             GivenIClickToProceedToTheSignInPage();
             GivenIEnterAnEmailAddress(email);
             GivenIEnterAPassword(pWord);
-            _website.AP_Product.ClickProceedButton();
+        }
+
+
+        [Given(@"I click sign in")]
+        public void GivenIClickSignIn()
+        {
+            _website.AP_Product.ClickSigninLink();
+            _website.AP_Product.ClickProceedToShipping();
             Thread.Sleep(3000);
         }
+
+
 
         [Given(@"I click the checkbox")]
         public void GivenIClickTheCheckbox()
         {
             _website.AP_Product.CheckShippingBox();
+            Thread.Sleep(3000);
             _website.AP_Product.ClickProceedButton();
             Thread.Sleep(3000);
         }
@@ -124,7 +134,6 @@ namespace AutomationPracticeTestFramework
         {
             Assert.That(_website.AP_Product.GetOrderStatus(), Does.Contain(orderConf));
         }
-
 
         [AfterScenario]
         public void DisposeWebDriver()
