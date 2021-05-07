@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
-namespace AutomationPracticeTestFramework.BDD
+namespace AutomationPracticeTestFramework
 {
     [Binding]
     public class AP_ForgotpasswordSteps
