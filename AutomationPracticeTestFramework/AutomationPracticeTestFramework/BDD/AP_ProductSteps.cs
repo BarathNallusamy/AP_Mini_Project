@@ -109,9 +109,9 @@ namespace AutomationPracticeTestFramework
         [Given(@"I click the checkbox")]
         public void GivenIClickTheCheckbox()
         {
-            _website.AP_Product.CheckShippingBox();
+            _website.AP_Product.ClickShippingBox();
             Thread.Sleep(3000);
-            _website.AP_Product.ClickProceedButton();
+            _website.AP_Product.ClickProceedToPayment();
             Thread.Sleep(3000);
         }
 

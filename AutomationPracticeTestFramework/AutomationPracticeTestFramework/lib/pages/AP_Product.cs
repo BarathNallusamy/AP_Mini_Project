@@ -15,7 +15,8 @@ namespace AutomationPracticeTestFramework
         private readonly string CheckoutOrderUrl = AppConfigReader.CheckoutOrderUrl;
         private IWebElement _proceedButton => SeleniumDriver.FindElement(By.CssSelector(".button.button-medium span")); 
         private IWebElement _proceedToSignInButton => SeleniumDriver.FindElement(By.CssSelector(".cart_navigation .button-medium")); 
-        private IWebElement _proceedToShipping => SeleniumDriver.FindElement(By.CssSelector(".button:nth-child(4) > span")); 
+        private IWebElement _proceedToShipping => SeleniumDriver.FindElement(By.CssSelector(".button")); 
+        private IWebElement _proceedToPayment => SeleniumDriver.FindElement(By.CssSelector(".standard-checkout > span")); 
         private IWebElement _emailField => SeleniumDriver.FindElement(By.Id("email"));
         private IWebElement _passwordField => SeleniumDriver.FindElement(By.Id("passwd"));
         private IWebElement _signinLink => SeleniumDriver.FindElement(By.Id("SubmitLogin"));
@@ -23,7 +24,7 @@ namespace AutomationPracticeTestFramework
         private IWebElement _womanLink => SeleniumDriver.FindElement(By.ClassName("sf-with-ul"));
         private IWebElement _productContainer => SeleniumDriver.FindElement(By.ClassName("product-container"));
         private IWebElement _addToCart => SeleniumDriver.FindElement(By.CssSelector(".ajax_add_to_cart_button > span"));
-        private IWebElement _checkbox => SeleniumDriver.FindElement(By.ClassName("checkbox"));
+        private IWebElement _checkbox => SeleniumDriver.FindElement(By.Id("cgv"));
         private IWebElement _bankWire => SeleniumDriver.FindElement(By.ClassName("bankwire"));
         private IWebElement _confirmButton => SeleniumDriver.FindElement(By.CssSelector(".button btn btn-default button-medium")); 
         private IWebElement _orderStatus => SeleniumDriver.FindElement(By.ClassName("dark")); 
@@ -54,6 +55,10 @@ namespace AutomationPracticeTestFramework
         public void ClickProceedToShipping()
         {
             _proceedToShipping.Click();
+        } 
+        public void ClickProceedToPayment()
+        {
+            _proceedToPayment.Click();
         }
 
         public void ClickProceedToSignIn()
@@ -65,7 +70,7 @@ namespace AutomationPracticeTestFramework
         {
             _signinLink.Click();
         }
-        public void CheckShippingBox()
+        public void ClickShippingBox()
         {
             _checkbox.Click();
         }
