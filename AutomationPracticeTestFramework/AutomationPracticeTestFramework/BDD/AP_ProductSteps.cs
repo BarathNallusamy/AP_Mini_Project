@@ -20,13 +20,14 @@ namespace AutomationPracticeTestFramework
         public void GivenIClickTheT_ShirtsTab()
         {
             _website.AP_Product.ClickTshirtTab();
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
         }
         
         [When(@"I add a T-shirt to the cart")]
         public void WhenIAddAT_ShirtToTheCart()
         {
             _website.AP_Product.ClickAddToCart();
+            Thread.Sleep(3000);
         }
         
         [Then(@"I get a success alert ""(.*)""")]
@@ -35,12 +36,12 @@ namespace AutomationPracticeTestFramework
             Assert.That(_website.AP_Product.GetAlertSuccess(), Does.Contain(message));
         }
 
-
-        [Given(@"I added a T-shirt to basket")]
-        public void GivenIAddedAT_ShirtToBasket()
+        [Given(@"I am on the homepage and I add a T-shirt to the cart")]
+        public void GivenIAmOnTheHomepageAndISignInAndAddTShirtToTheCart()
         {
-            _website.AP_Product.ClickAddToCart();
-            Thread.Sleep(3000);
+            GivenIAmOnTheHomepage();
+            GivenIClickTheT_ShirtsTab();
+            WhenIAddAT_ShirtToTheCart();
         }
 
         [Given(@"I click the proceed to checkout button")]

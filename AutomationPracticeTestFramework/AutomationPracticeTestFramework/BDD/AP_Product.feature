@@ -10,11 +10,8 @@ Scenario: Add a product to the cart
 	When I add a T-shirt to the cart
 	Then I get a success alert "Product successfully added to your shopping cart"
 
-	@mytag
-Scenario: Buy the product added to cart
-	Given I am on the homepage
-	And I click the T-shirts tab 
-	And I added a T-shirt to basket
+Scenario: Sign in from cart to see delivery info
+Given I added a T-shirt to basket
 	And I click the proceed to checkout button
 	And I click to proceed to the sign in page
 	And I enter an email address "test@sparta.com"
