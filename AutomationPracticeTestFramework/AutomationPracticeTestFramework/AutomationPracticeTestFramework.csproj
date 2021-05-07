@@ -101,9 +101,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConfigReader.cs" />
+    <Compile Include="BDD\AP_CheckoutSteps.cs" />
     <Compile Include="BDD\AP_ForgotpasswordSteps.cs" />
     <Compile Include="BDD\AP_SigninSteps.cs" />
     <Compile Include="lib\driver_config\SeleniumDriverConfig.cs" />
+    <Compile Include="lib\pages\AP_Checkout.cs" />
     <Compile Include="lib\pages\AP_CreateAccount.cs" />
     <Compile Include="lib\pages\AP_ForgotPassword.cs" />
     <Compile Include="lib\pages\AP_HomePage.cs" />
@@ -114,6 +116,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="BDD\AP_Checkout.feature" />
     <None Include="BDD\AP_Forgotpassword.feature" />
     <None Include="BDD\AP_Signin.feature" />
     <None Include="ClassDiagram1.cd" />
