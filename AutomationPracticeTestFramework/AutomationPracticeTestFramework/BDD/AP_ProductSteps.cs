@@ -36,8 +36,9 @@ namespace AutomationPracticeTestFramework
             Assert.That(_website.AP_Product.GetAlertSuccess(), Does.Contain(message));
         }
 
-        [Given(@"I am on the homepage and I add a T-shirt to the cart")]
-        public void GivenIAmOnTheHomepageAndISignInAndAddTShirtToTheCart()
+
+        [Given(@"I added a T-shirt to basket")]
+        public void GivenIAddedAT_ShirtToBasket()
         {
             GivenIAmOnTheHomepage();
             GivenIClickTheT_ShirtsTab();
@@ -92,6 +93,7 @@ namespace AutomationPracticeTestFramework
         }
     }
 }
+
 
 
 
