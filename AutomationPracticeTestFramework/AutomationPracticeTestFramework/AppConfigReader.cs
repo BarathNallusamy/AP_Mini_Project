@@ -8,6 +8,5 @@ namespace AutomationPracticeTestFramework
         public static readonly string SigninPageUrl = ConfigurationManager.AppSettings["signinpage_url"];
         public static readonly string CreateAccUrl = ConfigurationManager.AppSettings["createacc_url"];
         public static readonly string ForgotPassUrl = ConfigurationManager.AppSettings["forgotpass_url"];
-        public static readonly string CheckoutUrl = ConfigurationManager.AppSettings["checkout_url"];
     }
 }
