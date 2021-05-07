@@ -15,6 +15,7 @@ namespace AutomationPracticeTestFramework
         private readonly string CheckoutOrderUrl = AppConfigReader.CheckoutOrderUrl;
         private IWebElement _proceedButton => SeleniumDriver.FindElement(By.CssSelector(".button.button-medium span")); 
         private IWebElement _proceedToSignInButton => SeleniumDriver.FindElement(By.CssSelector(".cart_navigation .button-medium")); 
+        private IWebElement _proceedToShipping => SeleniumDriver.FindElement(By.CssSelector(".button:nth-child(4) > span")); 
         private IWebElement _emailField => SeleniumDriver.FindElement(By.Id("email"));
         private IWebElement _passwordField => SeleniumDriver.FindElement(By.Id("passwd"));
         private IWebElement _signinLink => SeleniumDriver.FindElement(By.Id("SubmitLogin"));
@@ -48,6 +49,11 @@ namespace AutomationPracticeTestFramework
         public void InputPassword(string password)
         {
             _passwordField.SendKeys(password);
+        }
+
+        public void ClickProceedToShipping()
+        {
+            _proceedToShipping.Click();
         }
 
         public void ClickProceedToSignIn()
