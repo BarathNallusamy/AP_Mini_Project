@@ -1,4 +1,5 @@
 ﻿using System;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 
 namespace AutomationPracticeTestFramework
@@ -17,31 +18,39 @@ namespace AutomationPracticeTestFramework
         [Given(@"I Am On The Forgot Password Page")]
         public void GivenIAmOnTheForgotPasswordPage()
         {
-            ScenarioContext.Current.Pending();
+            AP_Website.AP_ForgotPassword.VisitForgotPassPage();
         }
         
         [When(@"I Click The Forgot Password Btn")]
         public void WhenIClickTheForgotPasswordBtn()
         {
-            ScenarioContext.Current.Pending();
+            AP_Website.AP_SigninPage.ClickForgotPassBtn();
         }
         
         [When(@"I Click The Retrieve Password Btc With An Email ""(.*)""")]
-        public void WhenIClickTheRetrievePasswordBtcWithAnEmail(string p0)
+        public void WhenIClickTheRetrievePasswordBtcWithAnEmail(string email)
         {
-            ScenarioContext.Current.Pending();
+            AP_Website.AP_ForgotPassword.InputEmail(email);
+            AP_Website.AP_ForgotPassword.ClickRetrieveLink();
         }
         
         [Then(@"I Go To The Forgot Password Page ""(.*)""")]
-        public void ThenIGoToTheForgotPasswordPage(string p0)
+        public void ThenIGoToTheForgotPasswordPage(string pageTitle)
         {
-            ScenarioContext.Current.Pending();
+            Assert.That(AP_Website.GetPageTitle(), Is.EqualTo(pageTitle));
         }
         
         [Then(@"I Got A Message ""(.*)""")]
-        public void ThenIGotAMessage(string p0)
+        public void ThenIGotAMessage(string message)
         {
-            ScenarioContext.Current.Pending();
+            Assert.That(AP_Website.AP_ForgotPassword.GetAlertMessage(), Does.Contain(message));
+        }
+
+        [AfterScenario]
+        public void DisposeWebDriver()
+        {
+            AP_Website.SeleniumDriver.Quit();
+            AP_Website.SeleniumDriver.Dispose();
         }
     }
 }
