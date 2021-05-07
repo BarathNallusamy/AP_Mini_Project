@@ -56,7 +56,6 @@ namespace AutomationPracticeTestFramework.BDD
         public void ThenIShouldReceiveAProductSuccessfullyAddedToYourShoppingCartMessage()
         {
             Assert.That(AP_Website.AP_TshirtPage.GetSuccessfullyAddedMessage(), Does.Contain("Product successfully added to your shopping cart"));
-            AP_Website.SeleniumDriver.Close();
         }
 
         [When(@"I select proceed to checkout button")]
