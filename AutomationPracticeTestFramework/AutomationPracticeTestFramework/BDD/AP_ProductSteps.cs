@@ -72,46 +72,20 @@ namespace AutomationPracticeTestFramework
             _website.AP_Product.InputPassword(pWord);
         }
 
-        [When(@"I click sign in")]
+        [Given(@"I click sign in")]
         public void WhenIClickSignIn()
         {
             _website.AP_Product.ClickSigninLink();
             Thread.Sleep(3000);
         }
 
-        [Then(@"I see address information ""(.*)""")]
-        public void ThenISeeAddressInformation(string delivery)
-        {
-            Assert.That(_website.AP_Product.GetDeliveryNotice(), Does.Contain(delivery));
-        }
-
-        [Given(@"I click the proceed to shipping")]
-        public void GivenIClickTheProceedToShipping(string email, string pWord)
-        {
-            GivenIAddedAT_ShirtToBasket();
-            GivenIClickTheProceedToCheckoutButton();
-            GivenIClickToProceedToTheSignInPage();
-            GivenIEnterAnEmailAddress(email);
-            GivenIEnterAPassword(pWord);
-        }
-
-
-        [Given(@"I click sign in")]
-        public void GivenIClickSignIn()
-        {
-            _website.AP_Product.ClickSigninLink();
-            _website.AP_Product.ClickProceedToShipping();
-            Thread.Sleep(3000);
-        }
-
-
-
         [Given(@"I click the checkbox")]
         public void GivenIClickTheCheckbox()
         {
+            _website.AP_Product.ClickProceedToShipping();
             _website.AP_Product.CheckShippingBox();
             Thread.Sleep(3000);
-            _website.AP_Product.ClickProceedButton();
+            _website.AP_Product.CheckStandardCheckoutBtn();
             Thread.Sleep(3000);
         }
 
@@ -132,7 +106,7 @@ namespace AutomationPracticeTestFramework
         [Then(@"I will see the confirmation message ""(.*)""")]
         public void ThenIWillSeeTheConfirmationMessage(string orderConf)
         {
-            Assert.That(_website.AP_Product.GetOrderStatus(), Does.Contain(orderConf));
+            Assert.That(_website.GetPageTitle(), Does.Contain("Order confirmation - My Store"));
         }
 
         [AfterScenario]

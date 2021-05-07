@@ -13,6 +13,7 @@ namespace AutomationPracticeTestFramework
         private IWebElement _productHover => SeleniumDriver.FindElement(By.CssSelector(".lnk_view > span"));
         private IWebElement _addToCart => SeleniumDriver.FindElement(By.CssSelector(".exclusive > span"));
         private IWebElement _successMessage => SeleniumDriver.FindElement(By.ClassName("layer_cart_product"));
+        private IWebElement _proceedToCheckOutBtn => SeleniumDriver.FindElement(By.CssSelector(".button-medium > span"));
 
 
 
@@ -43,6 +44,12 @@ namespace AutomationPracticeTestFramework
         public string GetSuccessfullyAddedMessage()
         {
             return _successMessage.Text;
+        }
+
+        public void ClickProceedToCheckoutBtn()
+        {
+            Thread.Sleep(3000);
+            _proceedToCheckOutBtn.Click();
         }
     }
 }

@@ -21,3 +21,10 @@ Scenario: Select a product from tshirt page
 Scenario: Add a product to the cart
 	When I add the product to the cart
 	Then I should receive a Product successfully added to your shopping cart message
+
+@Happy_path
+Scenario: Proceed to checkout
+	Given I am on the tshirt page
+	When I select proceed to checkout button
+	Then I should be able to navigate to the "Order - My Store" page
+

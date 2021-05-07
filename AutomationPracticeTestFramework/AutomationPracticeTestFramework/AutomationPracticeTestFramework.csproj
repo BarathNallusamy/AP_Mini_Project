@@ -102,7 +102,11 @@
   <ItemGroup>
     <Compile Include="AppConfigReader.cs" />
     <Compile Include="BDD\AP_ForgotpasswordSteps.cs" />
+
+    <Compile Include="BDD\AP_ProceedToCheckout.cs" />
+
     <Compile Include="BDD\AP_ProductSteps.cs" />
+
     <Compile Include="BDD\AP_SigninSteps.cs" />
     <Compile Include="BDD\ProductSelectionSteps.cs" />
     <Compile Include="lib\driver_config\SeleniumDriverConfig.cs" />

@@ -47,8 +47,8 @@ namespace AutomationPracticeTestFramework.BDD
         [When(@"I add the product to the cart")]
         public void WhenIAddTheProductToTheCart()
         {
-            AP_Website.AP_TshirtPage.VisitTshirtCatPage();
-            AP_Website.AP_TshirtPage.ClickProductViewBtn();
+            GivenIAmOnTheTshirtCategoryPage();
+            WhenISelectToViewAProduct();
             AP_Website.AP_TshirtPage.AddProductToCart();
         }
 
@@ -56,6 +56,19 @@ namespace AutomationPracticeTestFramework.BDD
         public void ThenIShouldReceiveAProductSuccessfullyAddedToYourShoppingCartMessage()
         {
             Assert.That(AP_Website.AP_TshirtPage.GetSuccessfullyAddedMessage(), Does.Contain("Product successfully added to your shopping cart"));
+        }
+
+        [When(@"I select proceed to checkout button")]
+        public void WhenISelectProceedToCheckoutButton()
+        {
+            WhenIAddTheProductToTheCart();
+            AP_Website.AP_TshirtPage.ClickProceedToCheckoutBtn();
+        }
+
+        [Then(@"I should be able to navigate to the ""(.*)"" page")]
+        public void ThenIShouldBeAbleToNavigateToThePage(string message)
+        {
+            Assert.That(AP_Website.GetPageTitle(), Is.EqualTo(message));
         }
 
 

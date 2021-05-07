@@ -15,7 +15,7 @@ namespace AutomationPracticeTestFramework
         private readonly string CheckoutOrderUrl = AppConfigReader.CheckoutOrderUrl;
         private IWebElement _proceedButton => SeleniumDriver.FindElement(By.CssSelector(".button.button-medium span")); 
         private IWebElement _proceedToSignInButton => SeleniumDriver.FindElement(By.CssSelector(".cart_navigation .button-medium")); 
-        private IWebElement _proceedToShipping => SeleniumDriver.FindElement(By.CssSelector(".button:nth-child(4) > span")); 
+        private IWebElement _proceedToShipping => SeleniumDriver.FindElement(By.Name("processAddress")); 
         private IWebElement _emailField => SeleniumDriver.FindElement(By.Id("email"));
         private IWebElement _passwordField => SeleniumDriver.FindElement(By.Id("passwd"));
         private IWebElement _signinLink => SeleniumDriver.FindElement(By.Id("SubmitLogin"));
@@ -23,12 +23,14 @@ namespace AutomationPracticeTestFramework
         private IWebElement _womanLink => SeleniumDriver.FindElement(By.ClassName("sf-with-ul"));
         private IWebElement _productContainer => SeleniumDriver.FindElement(By.ClassName("product-container"));
         private IWebElement _addToCart => SeleniumDriver.FindElement(By.CssSelector(".ajax_add_to_cart_button > span"));
-        private IWebElement _checkbox => SeleniumDriver.FindElement(By.ClassName("checkbox"));
+        private IWebElement _checkbox => SeleniumDriver.FindElement(By.ClassName("checker"));
+        private IWebElement _checkboxClass => SeleniumDriver.FindElement(By.Id("uniform-cgv"));
         private IWebElement _bankWire => SeleniumDriver.FindElement(By.ClassName("bankwire"));
-        private IWebElement _confirmButton => SeleniumDriver.FindElement(By.CssSelector(".button btn btn-default button-medium")); 
+        private IWebElement _confirmButton => SeleniumDriver.FindElement(By.CssSelector("#cart_navigation span")); 
         private IWebElement _orderStatus => SeleniumDriver.FindElement(By.ClassName("dark")); 
         private IWebElement _successMessage => SeleniumDriver.FindElement(By.ClassName("layer_cart_product"));
         private IWebElement _deliveryNotice => SeleniumDriver.FindElement(By.Id("center_column"));
+        private IWebElement _standardCheckoutBtn => SeleniumDriver.FindElement(By.Name("processCarrier"));
 
         public AP_Product(IWebDriver seleniumDriver)
         {
@@ -67,7 +69,15 @@ namespace AutomationPracticeTestFramework
         }
         public void CheckShippingBox()
         {
+            Actions action = new Actions(SeleniumDriver);
+            action.MoveToElement(_checkboxClass).Perform();
+            Thread.Sleep(3000);
             _checkbox.Click();
+        }
+
+        public void CheckStandardCheckoutBtn()
+        {
+            _standardCheckoutBtn.Click();
         }
 
         public void ClickBankWire()
