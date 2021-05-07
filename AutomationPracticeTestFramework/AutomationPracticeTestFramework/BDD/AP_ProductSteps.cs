@@ -85,6 +85,47 @@ namespace AutomationPracticeTestFramework
         }
 
 
+        [Given(@"I click the proceed to shipping")]
+        public void GivenIClickTheProceedToShipping(string email, string pWord)
+        {
+            GivenIAddedAT_ShirtToBasket();
+            GivenIClickTheProceedToCheckoutButton();
+            GivenIClickToProceedToTheSignInPage();
+            GivenIEnterAnEmailAddress(email);
+            GivenIEnterAPassword(pWord);
+            _website.AP_Product.ClickProceedButton();
+            Thread.Sleep(3000);
+        }
+
+        [Given(@"I click the checkbox")]
+        public void GivenIClickTheCheckbox()
+        {
+            _website.AP_Product.CheckShippingBox();
+            _website.AP_Product.ClickProceedButton();
+            Thread.Sleep(3000);
+        }
+
+        [Given(@"I click bankwire payment")]
+        public void GivenIClickBankwirePayment()
+        {
+            _website.AP_Product.ClickBankWire();
+            Thread.Sleep(3000);
+        }
+
+        [When(@"I click confirm payment")]
+        public void WhenIClickConfirmPayment()
+        {
+            _website.AP_Product.ClickConfirmOrder();
+            Thread.Sleep(3000);
+        }
+
+        [Then(@"I will see the confirmation message ""(.*)""")]
+        public void ThenIWillSeeTheConfirmationMessage(string orderConf)
+        {
+            Assert.That(_website.AP_Product.GetOrderStatus(), Does.Contain(orderConf));
+        }
+
+
         [AfterScenario]
         public void DisposeWebDriver()
         {

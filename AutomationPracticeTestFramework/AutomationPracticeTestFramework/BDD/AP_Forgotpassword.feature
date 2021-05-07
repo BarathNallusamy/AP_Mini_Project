@@ -1,3 +1,6 @@
+Feature: AP_Forgotpassword
+	Simple calculator for adding two numbers
+
 @happy
 Scenario: Navigate to Forgot Password Page from signin page
 	Given I Am On The SignIn Page
