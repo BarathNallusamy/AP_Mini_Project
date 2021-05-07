@@ -102,10 +102,15 @@
   <ItemGroup>
     <Compile Include="AppConfigReader.cs" />
     <Compile Include="BDD\AP_ForgotpasswordSteps.cs" />
+
     <Compile Include="BDD\AP_ProceedToCheckout.cs" />
+
+    <Compile Include="BDD\AP_ProductSteps.cs" />
+
     <Compile Include="BDD\AP_SigninSteps.cs" />
     <Compile Include="BDD\ProductSelectionSteps.cs" />
     <Compile Include="lib\driver_config\SeleniumDriverConfig.cs" />
+    <Compile Include="lib\pages\AP_Product.cs" />
     <Compile Include="lib\pages\AP_CreateAccount.cs" />
     <Compile Include="lib\pages\AP_ForgotPassword.cs" />
     <Compile Include="lib\pages\AP_HomePage.cs" />
@@ -119,7 +124,11 @@
   <ItemGroup>
     <None Include="BDD\AP_Forgotpassword.feature" />
     <None Include="BDD\AP_Signin.feature" />
+
+    <None Include="BDD\AP_Product.feature" />
+
     <None Include="BDD\ProductSelection.feature" />
+
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
