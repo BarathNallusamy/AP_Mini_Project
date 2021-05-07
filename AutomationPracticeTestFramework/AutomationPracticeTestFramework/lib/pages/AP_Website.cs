@@ -8,6 +8,7 @@ namespace AutomationPracticeTestFramework
         public AP_HomePage AP_HomePage { get; internal set; }
         public AP_SigningPage AP_SigninPage { get; internal set; }
         public AP_ForgotPassword AP_ForgotPassword { get; internal set; }
+        public AP_Checkout AP_Checkout { get; internal set; }
         public AP_Website(string driver, int pageLoadSecs = 20, int waitSecs = 20)
         {
             //construct and configure the driver
